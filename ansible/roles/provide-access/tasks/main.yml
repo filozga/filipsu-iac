@@ -1,0 +1,4 @@
+---
+- include_tasks: install-sudo.yml
+- include_tasks: create-technic.yml
+- include_tasks: add-ssh-keys.yml

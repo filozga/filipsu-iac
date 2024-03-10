@@ -1,0 +1,6 @@
+- name: Set authorized key for user 'technic'
+  ansible.posix.authorized_key:
+    user: technic
+    state: present
+    key: "{% for key in query('fileglob', 'keys/*.pub') %}{{ lookup('file', key) ~ '\n'}}{% endfor %}"
+    exclusive: yes

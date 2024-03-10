@@ -1,0 +1,15 @@
+---
+- name: Create group
+  group:
+    name: technic
+    state: present
+    gid: "{{ technic_gid }}"
+
+- name: Create user
+  ansible.builtin.user:
+    name: technic
+    comment: technic user, to not use root and unify naming convention 
+    groups: technic, sudo
+    uid: "{{ technic_uid }}"
+    shell: /bin/bash
+    create_home: true

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  vars:
+    ansible_user: ubuntu
+  roles:
+    - provide-access
+  become: yes
